@@ -1,9 +1,0 @@
-.link {
-    text-decoration: none;    
-    transition: var(--transition);
-    transition-property: color;
-} 
-.link:hover,
-.link:focus {
-    color: var(--accent-color);
-}

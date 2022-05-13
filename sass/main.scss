@@ -3,10 +3,9 @@
 
 @import "./components/container";
 @import "./components/section";
-@import "./components/list";
-@import "./components/link";
-@import "./components/title";
-@import "./components/visually-hidden";
+@import "./bace/common";
+
+@import "./utils/visually-hidden";
 
 @import "./components/page-header";
 @import "./components/page-hero";

@@ -1,0 +1,38 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    color: var(--main-text-color);
+    margin: 0;
+}
+.list{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.link {
+    text-decoration: none;    
+    transition: var(--transition);
+    transition-property: color;
+
+    &:hover,
+    &:focus {
+        color: var(--accent-color);
+    }
+}
+.title{
+    font-size: 36px;
+    line-height: 1.17;
+    text-align: center;
+    letter-spacing: 0.03em;
+    margin-bottom: 50px;
+}
+.logo{
+    font-family: 'Raleway',sans-serif;
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 1.19;
+    letter-spacing: 0.03em;
+    text-decoration: none;
+    color: var(--accent-color);
+    display: inline-block;
+}

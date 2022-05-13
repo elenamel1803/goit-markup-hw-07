@@ -15,13 +15,6 @@
   --transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-body {
-  font-family: "Roboto", sans-serif;
-  font-size: 14px;
-  color: var(--main-text-color);
-  margin: 0;
-}
-
 h1,
 h2,
 h3,
@@ -64,6 +57,13 @@ img {
   padding-bottom: 94px;
 }
 
+body {
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+  color: var(--main-text-color);
+  margin: 0;
+}
+
 .list {
   list-style: none;
   padding: 0;
@@ -75,9 +75,7 @@ img {
   transition: var(--transition);
   transition-property: color;
 }
-
-.link:hover,
-.link:focus {
+.link:hover, .link:focus {
   color: var(--accent-color);
 }
 
@@ -87,6 +85,17 @@ img {
   text-align: center;
   letter-spacing: 0.03em;
   margin-bottom: 50px;
+}
+
+.logo {
+  font-family: "Raleway", sans-serif;
+  font-weight: 700;
+  font-size: 26px;
+  line-height: 1.19;
+  letter-spacing: 0.03em;
+  text-decoration: none;
+  color: var(--accent-color);
+  display: inline-block;
 }
 
 .visually-hidden {
@@ -113,20 +122,12 @@ img {
   align-items: center;
 }
 
-.logo {
-  font-family: "Raleway", sans-serif;
-  font-weight: 700;
-  font-size: 26px;
-  line-height: 1.19;
-  letter-spacing: 0.03em;
-  text-decoration: none;
-  color: var(--accent-color);
+.header__logo {
   padding-top: 24px;
   padding-bottom: 25px;
-  display: block;
 }
 
-.logo-studio {
+.header__logo--black {
   color: var(--logo-color-studio);
 }
 
@@ -246,21 +247,22 @@ img {
   transition: var(--transition);
   transition-property: background;
 }
-
-.hero__btn:hover,
-.hero__btn:focus {
+.hero__btn:hover, .hero__btn:focus {
   background: var(--second-btn-color);
 }
 
-.benefits-list {
+.benefits__list {
   display: flex;
 }
 
-.benefits-item {
+.benefits__item {
   max-width: 270px;
 }
+.benefits__item:not(:last-child) {
+  margin-right: 30px;
+}
 
-.benefits-icon-item {
+.benefits-block {
   display: flex;
   height: 120px;
   background: #F5F4FA;
@@ -269,23 +271,18 @@ img {
   justify-content: center;
   align-items: center;
 }
-
-.benefits-icon {
+.benefits-block__icon {
   display: block;
 }
 
-.benefits-item:not(:last-child) {
-  margin-right: 30px;
-}
-
-.benefits-title {
+.benefits__title {
   line-height: 1.14;
   letter-spacing: 0.03em;
   text-transform: uppercase;
   margin-bottom: 10px;
 }
 
-.benefits-text {
+.benefits__text {
   line-height: 1.71;
   letter-spacing: 0.03em;
   color: var(--second-text-color);
@@ -294,24 +291,23 @@ img {
 .about {
   padding-bottom: 94px;
 }
-
-.about-list {
+.about__list {
   display: flex;
   align-items: center;
 }
-
-.about-item + .about-item {
+.about__item + .about__item {
   margin-left: 30px;
 }
 
-.container-about-item {
+.about-block {
   position: relative;
   display: flex;
 }
-
-.about-item-text {
+.about-block__text {
   position: absolute;
   display: flex;
+  justify-content: center;
+  align-items: center;
   font-weight: 700;
   line-height: 1.14;
   text-align: center;
@@ -322,35 +318,32 @@ img {
   width: 100%;
   color: var(--backgroun-text-color);
   background-color: rgba(47, 48, 58, 0.8);
-  justify-content: center;
-  align-items: center;
 }
 
 .team {
   background: var(--third-backgroun-color);
 }
 
-.team-list {
+.team__list {
   display: flex;
 }
 
-.team-item {
+.team__item {
   background: var(--main-backgroun-color);
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 0px 0px 4px 4px;
   width: 270px;
 }
-
-.team-item:not(:last-child) {
+.team__item:not(:last-child) {
   margin-right: 30px;
 }
 
-.container-team-item {
+.team-block {
   padding-top: 30px;
   padding-bottom: 30px;
 }
 
-.team-item-title {
+.team-block__title {
   font-weight: 500;
   font-size: 16px;
   line-height: 1.19;
@@ -359,7 +352,7 @@ img {
   margin-bottom: 10px;
 }
 
-.team-item-text {
+.team-block__text {
   font-weight: 400;
   font-size: 16px;
   line-height: 1.19;
@@ -369,16 +362,16 @@ img {
   margin-bottom: 16px;
 }
 
-.team-soc-list {
+.team-soc {
   display: flex;
   justify-content: center;
 }
 
-.team-soc-item + .team-soc-item {
+.team-soc__item + .team-soc__item {
   margin-left: 10px;
 }
 
-.team-soc-link {
+.team-soc__link {
   width: 44px;
   height: 44px;
   border-radius: 50%;
@@ -388,38 +381,33 @@ img {
   transition: var(--transition);
   transition-property: background-color;
 }
+.team-soc__link:hover, .team-soc__link:focus {
+  background-color: var(--accent-color);
+}
 
-.team-soc-icon {
+.team-soc__icon {
   fill: #AFB1B8;
   transition: var(--transition);
   transition-property: fill;
 }
-
-.team-soc-link:hover,
-.team-soc-link:focus {
-  background-color: var(--accent-color);
-}
-
-.team-soc-link:hover .team-soc-icon,
-.team-soc-link:focus .team-soc-icon {
+.team-soc__link:hover .team-soc__icon, .team-soc__link:focus .team-soc__icon {
   fill: var(--backgroun-text-color);
 }
 
-.clients-list {
+.clients__list {
   display: flex;
 }
 
-.clients-item {
+.clients__item {
   width: 170px;
   height: 92px;
   box-sizing: border-box;
 }
-
-.clients-item:not(:last-child) {
+.clients__item:not(:last-child) {
   margin-right: 30px;
 }
 
-.clients-link {
+.clients__link {
   display: flex;
   width: 100%;
   height: 100%;
@@ -431,21 +419,17 @@ img {
   transition: var(--transition);
   transition-property: border;
 }
-
-.clients-link:hover,
-.clients-link:focus {
+.clients__link:hover, .clients__link:focus {
   border: 1px solid var(--accent-color);
 }
 
-.clients-icon {
+.clients__icon {
   display: block;
   fill: rgb(175, 177, 184);
   transition: var(--transition);
   transition-property: fill;
 }
-
-.clients-link:hover .clients-icon,
-.clients-link:focus .clients-icon {
+.clients__link:hover .clients__icon, .clients__link:focus .clients__icon {
   fill: var(--accent-color);
 }
 
@@ -460,37 +444,29 @@ img {
   align-items: baseline;
 }
 
-.footer-logo {
-  font-family: "Raleway", sans-serif;
-  font-weight: 700;
-  font-size: 26px;
-  line-height: 1.19;
-  letter-spacing: 0.03em;
-  text-decoration: none;
-  color: var(--accent-color);
-  display: inline-block;
+.footer__logo {
   margin-bottom: 20px;
 }
 
-.footer-logo-studio {
+.footer__logo--white {
   color: var(--backgroun-text-color);
 }
 
-.footer-address {
+.address {
   font-style: normal;
 }
 
-.footer-item:not(:last-child) {
+.address__item:not(:last-child) {
   margin-bottom: 9px;
 }
 
-.footer-link {
+.address__link {
   line-height: 1.71;
   letter-spacing: 0.03em;
   color: var(--footer-link);
 }
 
-.footer-link-address {
+.address__link--bold {
   color: var(--backgroun-text-color);
 }
 
@@ -498,7 +474,7 @@ img {
   margin-left: 70px;
 }
 
-.social-title {
+.social__title {
   font-weight: 700;
   font-size: 14px;
   line-height: 1.14;
@@ -508,16 +484,16 @@ img {
   margin-bottom: 20px;
 }
 
-.social-list {
+.social__list {
   display: flex;
   justify-content: center;
 }
 
-.social-item + .social-item {
+.social__item + .social__item {
   margin-left: 10px;
 }
 
-.social-link {
+.social__link {
   display: flex;
   width: 44px;
   height: 44px;
@@ -528,26 +504,20 @@ img {
   transition: var(--transition);
   transition-property: background-color;
 }
-
-.social-icon {
-  fill: var(--backgroun-text-color);
-}
-
-.social-link:hover,
-.social-link:focus {
+.social__link:hover, .social__link:focus {
   background-color: var(--accent-color);
 }
 
-.footer-subscribe {
+.social__icon {
+  fill: var(--backgroun-text-color);
+}
+
+.subscribe {
   margin-left: auto;
   margin-right: 0;
 }
 
-.footer-form {
-  display: flex;
-}
-
-.footer-subscribe-text {
+.subscribe__text {
   font-weight: 700;
   font-size: 14px;
   line-height: 1.14;
@@ -557,7 +527,11 @@ img {
   margin-bottom: 20px;
 }
 
-.footer-subscribe-input {
+.footer-form {
+  display: flex;
+}
+
+.footer-form__input {
   display: block;
   box-sizing: border-box;
   width: 358px;
@@ -570,8 +544,7 @@ img {
   color: var(--backgroun-text-color);
   padding-left: 16px;
 }
-
-.footer-subscribe-input::placeholder {
+.footer-form__input::placeholder {
   font-size: 16px;
   line-height: 1.25;
   display: flex;
@@ -580,7 +553,7 @@ img {
   color: rgba(255, 255, 255, 0.6);
 }
 
-.footer-subscribe-btn {
+.footer-form__btn {
   width: 200px;
   height: 50px;
   background: var(--accent-color);
@@ -598,14 +571,12 @@ img {
   transition: var(--transition);
   transition-property: background;
 }
-
-.footer-subscribe-icon {
-  margin-left: 10px;
+.footer-form__btn:hover, .footer-form__btn:focus {
+  background: var(--second-btn-color);
 }
 
-.footer-subscribe-btn:hover,
-.footer-subscribe-btn:focus {
-  background: var(--second-btn-color);
+.footer-form__icon {
+  margin-left: 10px;
 }
 
 .filters-list {

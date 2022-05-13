@@ -1,32 +1,30 @@
 .about{
     padding-bottom: 94px;
+    &__list {
+        display: flex;
+        align-items: center;
+    }
+    &__item + &__item{
+        margin-left: 30px;
+    }
 }
-
-.about-list {
-    display: flex;
-    align-items: center;
-}
-.about-item + .about-item{
-    margin-left: 30px;
-}
-.container-about-item{
+.about-block {
     position: relative;
     display: flex;
-    
-}
-.about-item-text{
-    position: absolute;
-    display: flex;
-    font-weight: 700;
-    line-height: 1.14;
-    text-align: center;
-    letter-spacing: 0.03em;
-    text-transform: uppercase;
-    bottom: 0;
-    height: 70px;
-    width: 100%;
-    color: var(--backgroun-text-color);
-    background-color: rgba(47, 48, 58, 0.8);
-    justify-content: center;
-    align-items: center
+    &__text{
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-weight: 700;
+        line-height: 1.14;
+        text-align: center;
+        letter-spacing: 0.03em;
+        text-transform: uppercase;
+        bottom: 0;
+        height: 70px;
+        width: 100%;
+        color: var(--backgroun-text-color);
+        background-color: rgba(47, 48, 58, 0.8);
+    }    
 }

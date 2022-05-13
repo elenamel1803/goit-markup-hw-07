@@ -1,16 +1,16 @@
 
-.clients-list{
+.clients__list{
     display: flex;    
 }
-.clients-item{
+.clients__item{
     width: 170px;
     height: 92px;
     box-sizing: border-box;
+    &:not(:last-child) {
+        margin-right: 30px;
+    }
 }
-.clients-item:not(:last-child) {
-    margin-right: 30px;
-}
-.clients-link{
+.clients__link{
     display: flex;
     width: 100%;
     height: 100%;
@@ -21,18 +21,18 @@
     outline: none;
     transition: var(--transition);
     transition-property: border;
+    &:hover,
+    &:focus{
+        border: 1px solid var(--accent-color);
+    }
 }
-.clients-link:hover,
-.clients-link:focus{
-    border: 1px solid var(--accent-color);
-}
-.clients-icon{
+.clients__icon{
     display: block;
     fill:rgba(175, 177, 184, 1);   
     transition: var(--transition);
-    transition-property: fill; 
-}
-.clients-link:hover .clients-icon,
-.clients-link:focus .clients-icon{
-    fill: var(--accent-color);
+    transition-property: fill;
+    .clients__link:hover &,
+    .clients__link:focus &{
+        fill: var(--accent-color);
+    }
 }
