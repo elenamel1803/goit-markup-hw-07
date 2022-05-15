@@ -20,20 +20,11 @@
     padding-bottom: 30px;
 }
 .team-block__title{
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 1.19;
-    text-align: center;
-    letter-spacing: 0.03em;
+    @include font( 16px, null, 500, 1.19, 0.03em, null, center);
     margin-bottom: 10px;
 }
 .team-block__text{
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 1.19;
-    text-align: center;
-    letter-spacing: 0.03em;
-    color: var(--second-text-color);
+    @include font( 16px, null, null, 1.19, 0.03em, var(--second-text-color), center);
     margin-bottom: 16px;
 }
 .team-soc {
@@ -42,20 +33,6 @@
 }
 .team-soc__item + .team-soc__item {
     margin-left: 10px;
-}
-.team-soc__link {
-    width: 44px;
-    height: 44px;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: var(--transition);
-    transition-property: background-color;
-    &:hover,
-    &:focus{
-        background-color: var(--accent-color);
-    }
 }
 .team-soc__icon{
     fill: #AFB1B8;

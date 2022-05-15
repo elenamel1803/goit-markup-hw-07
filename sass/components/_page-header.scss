@@ -18,31 +18,27 @@
     margin-left: 93px;
     display: flex;
 }
-.menu-list__item:not(:first-child){
-    margin-left: 50px;
-}
 .menu-list__item{
     position: relative;
+    &:not(:first-child){
+        margin-left: 50px;
+    }
 }
 .menu-list__link.current{
     color: var(--accent-color);
-}
-.menu-list__link.current::after{
-    content: "";
-    position: absolute;
-    bottom: -2px;
-    left: 0;
-    width: 100%;
-    height: 4px;  
-    background: #2196F3;
-    border-radius: 2px;  
-
+    &::after{
+        content: "";
+        position: absolute;
+        bottom: -2px;
+        left: 0;
+        width: 100%;
+        height: 4px;  
+        background: var(--accent-color);
+        border-radius: 2px;
+    }
 }
 .menu-list__link{
-    color: inherit;
-    font-weight: 500;
-    line-height: 1.14;
-    letter-spacing: 0.02em;
+    @include font(null, null, 500, 1.14, 0.02em, inherit);
     display: block;
     padding-top: 32px;
     padding-bottom: 32px;
@@ -55,10 +51,7 @@
     margin-left: 50px;
 }
 .connect-list__link{
-    font-weight: 500;
-    line-height: 1.14;
-    letter-spacing: 0.02em;
-    color: var(--second-text-color);
+    @include font(null, null, 500, 1.14, 0.02em, var(--second-text-color), null);
     align-items: center;
     display: flex;
     padding-top: 32px;
@@ -71,8 +64,8 @@
     fill: currentColor;
     transition: var(--transition);
     transition-property: fill;
-}
-.connect-list__link:hover .connect-list__icon,
-.connect-list__link:focus .connect-list__icon{
-    fill: var(--accent-color);
+    .connect-list__link:hover &,
+    .connect-list__link:focus &{
+        fill: var(--accent-color);
+    }
 }
